@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Pinegrow - TailwindCSS Blocks Template</title>
+        <link href="{{ url_for('static', filename='tailwind_theme/tailwind.css') }}" rel="stylesheet" type="text/css">
+        <script>/* Pinegrow Interactions, do not remove */ (function(){try{if(!document.documentElement.hasAttribute('data-pg-ia-disabled')) { window.pgia_small_mq=typeof pgia_small_mq=='string'?pgia_small_mq:'(max-width:767px)';window.pgia_large_mq=typeof pgia_large_mq=='string'?pgia_large_mq:'(min-width:768px)';var style = document.createElement('style');var pgcss='html:not(.pg-ia-no-preview) [data-pg-ia-hide=""] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show=""] {opacity:1;visibility:visible;display:block;}';if(document.documentElement.hasAttribute('data-pg-id') && document.documentElement.hasAttribute('data-pg-mobile')) {pgia_small_mq='(min-width:0)';pgia_large_mq='(min-width:99999px)'} pgcss+='@media ' + pgia_small_mq + '{ html:not(.pg-ia-no-preview) [data-pg-ia-hide="mobile"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="mobile"] {opacity:1;visibility:visible;display:block;}}';pgcss+='@media ' + pgia_large_mq + '{html:not(.pg-ia-no-preview) [data-pg-ia-hide="desktop"] {opacity:0;visibility:hidden;}html:not(.pg-ia-no-preview) [data-pg-ia-show="desktop"] {opacity:1;visibility:visible;display:block;}}';style.innerHTML=pgcss;document.querySelector('head').appendChild(style);}}catch(e){console&&console.log(e);}})()</script>
+        <meta name="description" content="Pinegrow Web Editor - SAAS TailwindCSS Template">
+    </head>
+    <body class="font-light text-gray-700">
+        <div class="container">
+            <header class="bg-white">
+                <nav class="flex items-center flex-wrap px-4 py-5  container mx-auto"> <a href="/" class="font-medium hover:text-blue-800 mr-auto text-2xl text-blue-600 uppercase"> ServerApp.net </a>
+                    <button class="hover:bg-blue-600 hover:text-white px-3 py-2 rounded text-blue-600 lg:hidden" data-name="nav-toggler" data-pg-ia='{"l":[{"name":"NabMenuToggler","trg":"click","a":{"l":[{"t":"^nav|[data-name=nav-menu]","l":[{"t":"set","p":0,"d":0,"l":{"class.remove":"hidden"}}]},{"t":"#gt# span:nth-of-type(1)","l":[{"t":"tween","p":0,"d":0.2,"l":{"rotationZ":45,"yPercent":300}}]},{"t":"#gt# span:nth-of-type(2)","l":[{"t":"tween","p":0,"d":0.2,"l":{"autoAlpha":0}}]},{"t":"#gt# span:nth-of-type(3)","l":[{"t":"tween","p":0,"d":0.2,"l":{"rotationZ":-45,"yPercent":-300}}]}]},"pdef":"true","trev":"true"}]}'> <span class="block border-b-2 border-current my-1 w-6"></span> <span class="block border-b-2 border-current my-1 w-6"></span> <span class="block border-b-2 border-current my-1 w-6"></span>
+                    </button>
+                    <div class="lg:flex lg:items-center lg:space-x-4 lg:space-y-0 lg:w-auto space-y-2 w-full hidden" data-name="nav-menu">
+                        <div class="flex flex-col lg:flex-row">
+                            <a href="/" class="font-light hover:text-blue-600 lg:px-4 py-2 px-0">Home</a>
+                            <a href="#" class="font-light hover:text-blue-600 lg:px-4 py-2 px-0">About</a>
+                            <!-- <a href="#" class="font-light hover:text-blue-600 lg:px-4 py-2 px-0">Features</a> -->
+                            <a href="/dashboard" class="font-light hover:text-blue-600 lg:px-4 py-2 px-0">Dashboard</a>
+                            <a href="#" class="font-light hover:text-blue-600 lg:px-4 py-2 px-0">Contact</a>
+                        </div>
+                            {% if session['username'] %}
+                            <a href="signin" class="bg-blue-600 font-light inline-block px-5 py-2 rounded text-white hover:bg-blue-700">{{ session['username'] }}</a>
+                            {% else %}
+                                <a href="signin" class="bg-blue-600 font-light inline-block px-5 py-2 rounded text-white hover:bg-blue-700">Login / Sign Up</a>
+                            {% endif %}
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <section id="mainsection">
+            <div id="maindiv" class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+        </br></br></br>
+        <footer class="bg-gray-900 pt-12 text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap -mx-4">
+</div>
+                <div class="py-4 text-sm">
+                    <hr class="border-gray-400 mb-4 opacity-25">
+                    <div class="flex flex-wrap -mx-4  items-center">
+                        <div class="px-4 py-2 w-full md:flex-1">
+                            <p>&copy; 2024 | ServerApp.net</p>
+                        </div>
+                        <div class="px-4 py-2 w-full sm:w-auto"> <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                            <!-- |<a href="#" class="hover:text-gray-400">Terms of Use</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{{ url_for('static', filename='pgia/lib/pgia.js') }}"></script>
+    </body>
+</html>
