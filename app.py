@@ -5,7 +5,7 @@ import sqlite3
 
 
 app = Flask(__name__)
-app.secret_key = b'^%jhgj(*)hjke/dske'
+app.secret_key = b'my little secret'
 
 DBNAME: Final[str] = "./sqlite0.db"
 
