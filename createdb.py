@@ -33,15 +33,15 @@ if sys.argv[1] == "create":
 if sys.argv[1] == "insert":
     print("Inserting test data...")
 
-    insert_user_sql = "INSERT INTO user VALUES(NULL, 'johnel@me.com', 'sponge', 'John', 'Lawman')"
+    insert_user_sql = "INSERT INTO user VALUES(NULL, 'me@me.com', 'wordpass', 'Arthur', 'Pewty')"
     cursor.execute(insert_user_sql)
 
-    insert_avail_service_sql = "INSERT INTO avail_service VALUES(NULL, 'WordPress', 'Yo! Dis CMS is da bomb!', 'wordpress', 'wordpress(1).svg')"
+    insert_avail_service_sql = "INSERT INTO avail_service VALUES(NULL, 'WordPress', 'The leading blogging and CMS platform on the Internet', 'wordpress', 'wordpress(1).svg')"
     cursor.execute(insert_avail_service_sql)
 
     conn.commit()
 
-    getuserid = "SELECT id from user where username = 'johnel@me.com'"
+    getuserid = "SELECT id from user where username = 'me@me.com'"
     useridrecord = cursor.execute(getuserid)
     userid = useridrecord.fetchone()
     print( "User id: " + str(userid[0]) )
